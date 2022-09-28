@@ -5,10 +5,8 @@ layout: home
 author_profile: true
 ---
 
-Hi, my name is [Shivkanwer Singh](https://www.linkedin.com/in/shivkanwer/) and I work at Microsoft as a Sr. Technical Consultant (Azure). I started my carrier as a Software Developer at Infosys Ltd. I have over 9 years of Industry experiecne and have worked on various roles across different Microsoft technologies. 
+##Hello, my name is [Shivkanwer Singh](https://www.linkedin.com/in/shivkanwer/), Welcome to my blog! 
+I work at Microsoft as a Sr. Technical Consultant (Azure). 
 
-Some of things that I do on day to day basis include:
-* Providing technical Pre-sales assistance to Microsoft partners to help them win deals on Azure
-* Work on Azure architecture design with developers
-* Provide technical recommendations and best practices to the Microsoft Partners
-* Deliver enablement sessions for the developers to help them ramp up on the various Azure services
+* 11 years of experience in cloud technologies, Strong business focus, technical knowledge, and experience to bridge the gap between the client needs and technology, and passion to make a difference in any endeavor.
+* Hands-on expertise in architecting and implementing cloud solutions based on Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) offerings.
