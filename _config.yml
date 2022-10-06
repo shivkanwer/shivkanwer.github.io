@@ -20,7 +20,7 @@ title: "The Teckie"
 title_separator: "-"
 subtitle: "Everything Cloud"
 name: "Shivkanwer Singh"
-description: "I discuss all things Azure"
+description: "I discuss about all things cloud"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "shivkanwer/shivkanwer.github.io"
@@ -102,7 +102,7 @@ analytics:
 author:
   name: "Shivkanwer Singh"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Works at Microsoft on Azure"
+  bio: "Sr. Partner Technical Consultant (Azure) at Microsoft"
   location: "Bangalore, India"
   email:
   links:
