@@ -13,7 +13,7 @@ Recently, I decided to brush up my Kubernetes skills and the best way to do that
 
 1. [Part 1](https://theteckie.com/kubernetes/kubernetes-fundametals-part1/)
 2. [Part 2](https://theteckie.com/kubernetes/kubernetes-fundametals-part2/)
-3. Part 3 (Coming soon!)
+3. [Part 3](https://theteckie.com/kubernetes/kubernetes-fundametals-part3/)
 4. Part 4 (Coming soon!)
 
 **Who is the target audience?**  
@@ -336,7 +336,7 @@ USER 1000
 **Privileged Containers**
 Privileged containers in Docker are, concisely put, containers that have all of the root capabilities of a host machine, allowing the ability to access resources which are not accessible in ordinary containers. One of the use cases for Privileged container is when the container requires direct hardware access. If required you can run the container as privileged container by adding `--privileged` flag to the docker run command.
 
-Generally it is not a good security practice to run containers as privileged container due obvious reasons.
+Generally, it is not a good security practice to run containers as privileged container due obvious reasons.
 {: .notice--danger}
 
 ### Security Context in Kubernetes
