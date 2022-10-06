@@ -14,7 +14,7 @@ Recently, I decided to brush up my Kubernetes skills and the best way to do that
 1. [Part 1](https://theteckie.com/kubernetes/kubernetes-fundametals-part1/)
 2. [Part 2](https://theteckie.com/kubernetes/kubernetes-fundametals-part2/)
 3. [Part 3](https://theteckie.com/kubernetes/kubernetes-fundametals-part3/)
-4. Part 4 (Coming soon!)
+4. [Part 4](https://theteckie.com/kubernetes/kubernetes-fundametals-part4/)
 
 **Who is the target audience?**  
 The target audience are the people like me who want to brush up their Kubernetes knowledge or people who are newly starting with Kubernetes and want to build a basic understanding of Kubernetes.
