@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes Fundamentals - Part 4"
-date: 2022-10-06
+date: 2022-10-07
 classes: wide
 categories:
   - Kubernetes
@@ -9,12 +9,14 @@ tags:
   - containers
 ---
 
+**This is part 4 of the 5 part series.**  
 Recently, I decided to brush up my Kubernetes skills and the best way to do that is to write a blog post and share my notes with the community. This is a 4 part series where I explain various concepts of Kubernetes at a high level.
 
 1. [Part 1](https://theteckie.com/kubernetes/kubernetes-fundametals-part1/)
 2. [Part 2](https://theteckie.com/kubernetes/kubernetes-fundametals-part2/)
 3. [Part 3](https://theteckie.com/kubernetes/kubernetes-fundametals-part3/)
 4. [Part 4](https://theteckie.com/kubernetes/kubernetes-fundametals-part4/)
+5. [Part 5](https://theteckie.com/kubernetes/kubernetes-fundametals-part5/)
 
 **Who is the target audience?**  
 The target audience are the people like me who want to brush up their Kubernetes knowledge or people who are newly starting with Kubernetes and want to build a basic understanding of Kubernetes.
@@ -25,7 +27,7 @@ The reader is expected to have basic understanding of Docker, Containerization a
 **Does the articles include hands on labs or samples?**  
 These articles will focus on the theoretical concepts of Kubernetes, hence there are no hands on labs included with these articles. However, I have provided links to Kubernetes official documentation where you can find good hands on examples about the concepts discussed in these articles.
 
-**Which topics are discussed in part 3?**
+**Which topics are discussed in part 4?**
 
 1. [Jobs and CronJobs](#jobs-and-cronjobs)
 2. [Ingress Controller](#ingress-controller)
