@@ -235,7 +235,7 @@ Kubeconfig file contains three sections:
 - Context - defines which user account will be used to access which cluster.
 
 <p align="center">
-   <img alt="Kubernetes config" src="/assets/images/kubernetes-fundametals/KubeConfig.svg" style="max-height: 600px;">
+   <img alt="Kubernetes config" src="/assets/images/kubernetes-fundametals/kubeconfig.svg" style="max-height: 600px">
 </p>
 
 Format of Kubeconfig file:
