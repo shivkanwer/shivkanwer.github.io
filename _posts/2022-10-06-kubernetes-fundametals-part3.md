@@ -10,7 +10,7 @@ tags:
 ---
 
 **This is part 3 of the 5 part series.**  
-Recently, I decided to brush up my Kubernetes skills and the best way to do that is to write a blog post and share my notes with the community. This is a 4 part series where I explain various concepts of Kubernetes at a high level.
+Recently, I decided to brush up my Kubernetes skills and the best way to do that is to write a blog post and share my notes with the community. This is a 5 part series where I explain various concepts of Kubernetes at a high level.
 
 1. [Part 1](https://theteckie.com/kubernetes/kubernetes-fundametals-part1/)
 2. [Part 2](https://theteckie.com/kubernetes/kubernetes-fundametals-part2/)
