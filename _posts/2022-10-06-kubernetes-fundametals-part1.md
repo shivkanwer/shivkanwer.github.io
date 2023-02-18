@@ -55,7 +55,7 @@ The components of the master node hold and control the state of the cluster, but
 
 1. _Kubelet_ handles the communication between master nodes and worker nodes. It is an agent that interacts with the API server in the Master Node and receives the deployment information for spinning up new pods.
 2. _Container Runtime_ is responsible for running the containers. Kubernetes is compatible with many different container runtimes like Docker, rkt, Moby etc.
-3. _Kube-proxy_ is the network proxy that runs on each node and maintains the network rules. These network rules allow network communication to your Pods from other network inside or outside of your cluster.
+3. _Kube-proxy_ is the network proxy that runs on each node and maintains the network rules. These network rules allow network communication to your Pods from other network inside or outside of your cluster. It ensures that each node gets an IP address, it also implements local IP tables and routes to handle traffic.
 
 ## **Pods**
 
