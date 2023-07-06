@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale: "en-US"
-title: "The Teckie"
+title: "The Teck Talk"
 title_separator: "-"
 subtitle: "Everything Cloud"
 name: "Shivkanwer Singh"
@@ -102,7 +102,7 @@ analytics:
 author:
   name: "Shivkanwer Singh"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Solutions Architect, Technology enabler at Microsoft"
+  bio: "Cloud Solutions Architect | Technology Enabler"
   location: "Bangalore, India"
   email:
   links:
@@ -111,7 +111,7 @@ author:
       url: "mailto:shivkanwer@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://theteckie.com/"
+      url: "https://thetecktalk.com/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/shivkanwer"
