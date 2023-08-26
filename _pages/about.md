@@ -7,5 +7,4 @@ author_profile: true
 
 ## Hello, my name is Shivkanwer Singh, Welcome to my blog!
 
-I work at Microsoft as a Sr. Partner Technical Consultant (Azure). I have 11 years of experience in cloud technologies, strong business focus, technical knowledge, and experience to bridge the gap between the client needs and technology.
-I have hands-on expertise in designing and implementing Azure cloud solutions.
+Dedicated and accomplished Cloud Solutions Architect with over a decade of experience designing, implementing, and optimizing cloud-based solutions. Adept at collaborating with cross-functional teams to deliver scalable and reliable architectures that meet business needs. Deep understanding of diverse cloud platforms, architectural paradigms, and DevOps methodologies. Experience in Site Reliability Engineering (SRE) and running large scale SaaS applications.
