@@ -4,7 +4,7 @@ date: 2022-10-06
 classes: wide
 excerpt: "This is part 2 of the 5 part series. Recently, I decided to brush up my Kubernetes skills and the best way to do that is to write a blog post and share my notes with the community. This is a 5 part series where I explain various concepts of Kubernetes at a high level."
 header:
-  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/kubernetes-fundametals/Kubernetes_architecture.svg"
+  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/kubernetes-fundametals/Kubernetes_architecture.jpg"
 categories:
   - Kubernetes
 tags:
