@@ -85,6 +85,7 @@ Recommend a manageable, secure, scalable, high performance, efficient, elastic, 
   - Amazon Cognito is one of the most critical services in this architecture and servers as the entry point for users. Unfortunately, it is a region scoped service and does not support built-in disaster  recovery to the secondary region. AWS provides guidance on developing custom solution for replicating user pools across regions. Since this is the most crucial service it is advisable to put development   effort into building a custom replication solution. Here is an example of one way of achieving this [How UnitedHealth Group Improved Disaster Recovery for Machine-to-Machine Authentication](https://aws.amazon.com/blogs/architecture/how-unitedhealth-group-improved-disaster-recovery-for-machine-to-machine-authentication/). However, in case the development effort is very high, advice is to explore similar 3rd party solutions like *Azure AD B2C*, *Okta* etc. which offer built-in DR. 
 
 **3. Manage user identities & sync user specific data across multiple devices**
+  
   Amazon Cognito is used for handling user authentication and authorization for the application. Amazon Cognito Sync is a feature of Cognito that enables cross-device syncing of application-related user data. This feature can be used to synchronize user profile data across mobile devices and web applications.
 
 **4. Ability to run analytics on top of collected data, with analytics they should be able to visualize & understand app data usage**
@@ -92,23 +93,28 @@ Recommend a manageable, secure, scalable, high performance, efficient, elastic, 
   - Amazon Pinpoint can save the collected data for up to 90 days. To keep the data for long term analytics and compliance requirements, the data is moved to S3 bucket. Additionally, the start-up can use Amazon QuickSight to perform advanced analytics and create interactive dashboards.
 
 **5. Ability for Service Providers to send notifications to consumer**
+  
   Amazon Pinpoint is used for sending push notifications to the customers.
 
 **6. Ability to configure their database and data access layer for high performance and throughput**
+  
   Amazon Aurora Serverless for MySQL database is recommended for the start-up in this scenario. Amazon Aurora delivers 5x performance and throughput over stock MySQL. The serverless offering provides on-demand, auto-scaling configuration for Amazon Aurora. This will allow the start-up to run their database in AWS without managing database capacity. Manually managing database capacity can take up valuable time and can lead to inefficient use of database resources. With Aurora Serverless, they can simply create a database, specify the desired database capacity range, and connect their application. Aurora will automatically adjust the capacity within the range they specified based on the application’s needs. The best part is they will only pay for the database capacity, storage, and I/O the database consumes when it is active. The database capacity automatically scales up or down to meet their workload needs and shuts down during periods of inactivity, saving them money as well as administration time.
 
 **7. Effective distribution of load**
+  
   The architecture proposes multi-level traffic distribution:
   - Level 1: To handle cross-region traffic routing and failover, the architecture makes use of Route 53.
   - Level 2: To enable load balancing at the instance level, the Elastic Beanstalk environment is equipped with an Application Load Balancer to distribute traffic among the multiple EC2 instances hosting the application workload.
 
 **8. A self-healing infrastructure that recovers from failed service instances**
+  
   All the services proposed for this architecture leverage the AWS Availability Zones to ensure high availability and resilience:
   - Route 53 is a global service and offers 100% availability SLA. Application Load Balancer is inherently HA with built-in support for leveraging multiple AZs.
   - Both Elastic Beanstalk and Amazon Aurora ensure high availability by leveraging the multi-AZ deployment.
   - Other services like Amazon S3, Amazon Cognito, KMS, Amazon Pinpoint, Kinesis Data Firehose, AWS DevOps services etc. are region scoped and inherently highly available. These services are built to leverage multiple availability zones and any infrastructure issues are automatically mitigated to ensure resiliency.
 
 **9. Security of data at rest and in transit**
+  
   The proposed architecture relies on multiple services for storing and accessing the data:
   - Amazon Aurora Serverless for MySQL – Data at rest is encrypted using Keys from AWS Key Management Service. The encryption is applied to not only the data at rest but also to the automated backups, snapshots, and replicas of the database. Amazon Aurora uses SSL/TLS to secure data in transit. 
   - Amazon S3 – Data at rest is encrypted using Keys from AWS Key Management Service. Data in transit is protected using SSL/TLS.
@@ -121,13 +127,16 @@ Recommend a manageable, secure, scalable, high performance, efficient, elastic, 
   - AWS CodeCommit – CodeCommit repositories are automatically encrypted at rest. No customer action is required. CodeCommit also encrypts repository data in transit. You can use either the HTTPS protocol, the SSH protocol, or both with CodeCommit repositories.
 
 **10. Securing access to the environment as the delivery team expands**
+  
   Delivery team or any other stakeholders are given access to AWS environment through AWS Identity and Access Management (IAM). IAM user groups have been leveraged to provide required permissions to users with different roles like Admins, Developers, Testers etc. The principle of least privileges has been followed. As the team expands new users can be easily added to the different groups based on their roles and given the required permissions automatically. 
 
 **11. An archival strategy for inactive objects greater than 6 months**
+  
   Data collected as part of Amazon Pinpoint to analyze the application usage will be stored in Amazon S3. After a period of 6 months data will be automatically archived to the Glacier by using the lifecycle management policies.
 
 **12. Ability to easily manage and replicate multiple environments based on their blueprint architecture**
-Infrastructure as Code (IaC) approach is followed to create templates describing all the AWS resource required to set up the complete infrastructure for this application. This is accomplished through AWS CloudFormation Service. Using AWS CloudFormation, the start-up can easily bring up multiple environments on demand or use this methodology to quickly replicate the infrastructure in different regions.
+  
+  Infrastructure as Code (IaC) approach is followed to create templates describing all the AWS resource required to set up the complete infrastructure for this application. This is accomplished through AWS CloudFormation Service. Using AWS CloudFormation, the start-up can easily bring up multiple environments on demand or use this methodology to quickly replicate the infrastructure in different regions.
 
 **References:**
 - [Resilience in AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/disaster-recovery-resiliency.html)
