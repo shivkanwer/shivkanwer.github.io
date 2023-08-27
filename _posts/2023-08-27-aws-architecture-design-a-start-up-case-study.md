@@ -1,9 +1,9 @@
 ---
 title: "AWS Architecture Design: A Start-up case study"
 date: 2023-08-27
-excerpt: "Recently, I came across an interesting scenario about a start-up looking to migrate their existing application onto cloud (AWS in this case). This blog post outlines my take on the solution. Feedback is welcome!"
+excerpt: "I came across an interesting scenario about a start-up looking to migrate their existing application onto cloud (AWS in this case). This blog post outlines my take on the solution. Feedback is welcome!"
 header:
-  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.svg"
+  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.jpg"
 classes: wide
 categories:
   - Architecture
@@ -11,10 +11,8 @@ tags:
   - cloud
   - aws
 ---
-<meta name="author" content="Shivkanwer Singh Sidhu">
-<meta name="image" property="og:image" content="https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.svg">
 
-Recently, I came across an interesting scenario about a start-up looking to migrate their existing application onto cloud (AWS in this case). This blog post outlines my take on the solution. Feedback is welcome!
+I came across an interesting scenario about a start-up looking to migrate their existing application onto cloud (AWS in this case). This blog post outlines my take on the solution. Feedback is welcome!
 
 ## Scenario
 Imagine you meet a small startup company planning to launch a new application that allows consumers & service providers to interact in real time. Currently, their architecture uses LAMP stack comprising of open-source software. Like many small start-ups they are confident that they will be the next big thing and expect significant, rapid, yet un-quantified growth in the next few months. With this in mind, they are concerned about the following:

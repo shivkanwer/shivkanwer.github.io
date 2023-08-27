@@ -2,6 +2,9 @@
 title: "Kubernetes Tips & Tricks"
 date: 2022-10-29
 classes: wide
+excerpt: "In this blog post I am sharing some of the useful Kubernetes aliases that I use on daily basis to make my job a little bit easier."
+header:
+  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.jpg"
 categories:
   - Kubernetes
 tags:
