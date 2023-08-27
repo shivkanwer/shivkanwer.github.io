@@ -30,7 +30,7 @@ masthead_title: # overrides the website title displayed in the masthead, use " "
 # breadcrumbs            : false # true, false (default)
 words_per_minute: 200
 comments:
-  provider: "giscus"
+  provider: "utterances"
   disqus:
     shortname: #"devbuilds"
   discourse:
@@ -42,7 +42,7 @@ comments:
     colorscheme: # "light" (default), "dark"
   utterances:
     theme: # "github-light" (default), "github-dark"
-    issue_term: # "pathname" (default)
+    issue_term: "pathname" # "pathname" (default)
   giscus:
     repository: "shivkanwer/shivkanwer.github.io"
     repo_id: "R_kgDOHISaGA" # Shown during giscus setup at https://giscus.app
