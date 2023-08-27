@@ -40,7 +40,7 @@ Recommend a manageable, secure, scalable, high performance, efficient, elastic, 
 ## Solution
 <img alt="AWS Architecture diagram for the startup scenario" src="https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.svg">
 
-*Download a [draw.io](https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/files/startup-scenario/startup-scenario-aws-arch.drawio) file of this architecture.*
+*Download a [draw.io](https://contentstore101.blob.core.windows.net/thetecktalk/startup-scenario-aws-arch.drawio?sp=r&st=2023-08-27T07:22:50Z&se=2043-08-27T15:22:50Z&spr=https&sv=2022-11-02&sr=b&sig=Ox1ET2IooV0hpZXb3UaGtElE%2FpkeeKaGROu8Plg9RLc%3D) file of this architecture.*
 
 ## Solution Flow
 1. Customer/Service Provider (User) initiates real-time interaction through the client app. User is redirected to Amazon Cognito for sign-in/sign-up. 
