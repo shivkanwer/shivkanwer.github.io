@@ -8,6 +8,8 @@ tags:
   - cloud
   - aws
 ---
+<meta name="author" content="Shivkanwer Singh Sidhu">
+<meta name="image" property="og:image" content="https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.svg">
 
 Recently, I came across an interesting scenario about a start-up looking to migrate their existing application onto cloud (AWS in this case). This blog post outlines my take on the solution. Feedback is welcome!
 
