@@ -1,3 +1,8 @@
 {
-  "cSpell.words": ["Kubelet", "Tolerations"]
+  "cSpell.words": [
+    "Entra",
+    "Kubelet",
+    "OIDC",
+    "Tolerations"
+  ]
 }
