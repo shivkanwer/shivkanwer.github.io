@@ -1,8 +1,11 @@
 {
   "cSpell.words": [
+    "BYOD",
     "Entra",
     "Kubelet",
     "OIDC",
-    "Tolerations"
+    "Tolerations",
+    "VNET",
+    "VNETs"
   ]
 }

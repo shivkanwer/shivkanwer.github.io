@@ -17,7 +17,7 @@ I came across an interesting scenario about a start-up looking to migrate their 
 ## Scenario
 Imagine you meet a small startup company planning to launch a new application that allows consumers & service providers to interact in real time. Currently, their architecture uses LAMP stack comprising of open-source software. Like many small start-ups they are confident that they will be the next big thing and expect significant, rapid, yet un-quantified growth in the next few months. With this in mind, they are concerned about the following:
 1. Scaling to meet the demand, but with uncertainty around when and how much this demand will be – they are very concerned about buying too much infrastructure too soon or not enough too late!
-2. Disaster Recovery planning, since this appliation is core their business.
+2. Disaster Recovery planning, since this application is core their business.
 3. Manage user identities & sync user specific data across multiple devices.
 4. Ability for Service Providers to send notifications to consumer. 
 5. Ability to run analytics on top of collected data, with analytics they should be able to visualize & understand app data usage.
