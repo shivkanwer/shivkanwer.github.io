@@ -15,6 +15,7 @@ tags:
 ---
 In this blog post, I delve into the intricacies of constructing a Zero Trust architecture tailored explicitly for Azure Managed Databases. While Zero Trust is a multifaceted concept, the primary focus of this blog centers on its application within the Azure managed database landscape.
 
+**In this article**
 - [Zero Trust Model](#zero-trust-model)
 - [Architecture](#architecture)
 - [Network Isolation](#network-isolation)
