@@ -1,6 +1,6 @@
 ---
 title: "Zero Trust Architecture for Azure Managed Databases"
-date: 2023-10-23
+date: 2023-11-02
 excerpt: "In this blog post, I delve into the intricacies of constructing a Zero Trust architecture tailored explicitly for Azure Managed Databases. While Zero Trust is a multifaceted concept, the primary focus of this blog centers on its application within the Azure managed database landscape."
 header:
   teaser: "/assets/images/zero-trust-arch/zero-trust-arch-for-azure-databases.jpg"
@@ -51,7 +51,7 @@ In the architecture diagram provided above, the Private Endpoint[^2] feature is 
 Access Control is one of the most important pillars of a Zero Trust architecture. When implementing Zero Trust for Azure Managed Databases, integrate the database with Microsoft Entra ID and disable the use of native database username and password. This implementation mandates that all user and workload must connect with the database using their own identity assigned through Microsoft Entra ID. This approach liberates you from the necessity of storing database credentials in various locations like config files, Key Vault, or Kubernetes secrets, thereby instantaneously mitigating security risks associated with potential database password exposure.
 
 ### User Access
-When it comes to user access to the database, a fundamental principle to adhere to is 'Keep people away from data'. It's crucial not to provide users with continuous 24/7, unrestricted access to the database. All requests for database access must undergo a thorough review and approval process.
+When it comes to user access to the database, a fundamental principle to adhere to is *'Keep people away from data'*. It's crucial not to provide users with continuous 24/7, unrestricted access to the database. All requests for database access must undergo a thorough review and approval process.
 
 To implement this, create distinct security groups within Microsoft Entra ID for various user roles that require access to the database. These roles might include Database Administrators, Database Developers, Database Support, and more. Each of these security groups is associated with specific roles like Admin, Writer, Reader etc. within the database, following the principle of *'least-privilege access'*.
 
@@ -69,7 +69,7 @@ In the context of enabling workloads, including applications, services, scripts,
 
 While these options have their merits, it is highly recommended to utilize Managed Identity whenever feasible, instead of opting for a Service Principal. The key distinction lies in how secrets are managed. When using a Service Principal, the responsibility of managing and regularly rotating secrets rests with you. In contrast, Managed Identity takes a significant burden off your shoulders as Microsoft Entra ID automatically handles the management and rotation of secrets on your behalf. Furthermore, Managed Identity ensures the secrecy of these secrets and allows your application to dynamically retrieve and utilize them at runtime through the use of Azure Identity Client Libraries[^5] and the Microsoft Authentication Library (MSAL)[^6]. 
 
-Additionally, it is essential to associate the Workload Identity with a specific role in the database, adhering to the principle of 'least-privilege access'. This further refines your security posture by granting only the minimum necessary permissions for the workload to perform its tasks.
+Additionally, it is essential to associate the Workload Identity with a specific role in the database, adhering to the principle of *'least-privilege access'*. This further refines your security posture by granting only the minimum necessary permissions for the workload to perform its tasks.
 
 [^4]: [Microsoft Entra ID - Workload Identity](https://learn.microsoft.com/en-us/azure/active-directory/workload-identities/workload-identities-overview)
 [^5]: [Azure Identity Client Libraries](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview?tabs=dotnet#azure-identity-client-libraries)
@@ -90,7 +90,7 @@ Azure Managed Databases provide robust security through the encryption of data, 
 
 **Backup and Disaster Recovery**
 
-Database backups play a critical role in any comprehensive business continuity and disaster recovery plan as they serve as a safeguard against data corruption, security breaches, or accidental deletions. Azure Managed Databases provide an automated backup feature that simplifies this process. These backups are accessible for retention periods ranging from 7 to 35 days, granting you the flexibility to restore your database server to any specific point within that window.
+Database backups play a critical role in any comprehensive business continuity and disaster recovery plan as they serve as a safeguard against data corruption, security breaches, or accidental deletions. Azure Managed Databases provide an automated backup feature that simplifies this process. These backups are accessible for retention periods ranging from 7 to 35 days, granting you the flexibility to restore your database server to any specific point within that window. In a scenario where a security incident like ransomware attack happens, you have the flexibility to restore the database to a known good state in the past.
 
 For organizations with data protection policies requiring extended backup availability, Azure offers the option to configure long-term retention (LTR)[^7] policies on a per-database basis.
 
@@ -110,6 +110,8 @@ Database auditing is a critical component of data security, compliance and integ
 The good news is that all Azure Managed Databases are equipped with comprehensive database auditing features. Once enabled, these audit logs can be seamlessly transmitted to Azure Log Analytics for short term storage and analytics. Beyond this, for organizations with long-term storage needs or compliance requirements, the audit logs can be exported to an Azure Storage account. 
 
 ## Compliance
-To ensure the Azure Managed Databases adhere to the industry standards, regulations and organizational policies, you can make use of Azure Policy. Azure Policy provides a comprehensive library of pre-defined policy definitions based on industry best practices. These policies can be effortlessly applied to ensure proper configuration and security of your managed databases.
+To ensure the Azure Managed Databases adhere to the industry standards, regulations and organizational policies, you can make use of Azure Policy. Azure Policy provides a comprehensive library of pre-defined policy definitions based on industry best practices. These policies can be effortlessly applied to ensure proper configuration and security of your managed databases. 
+
+With Azure Policy you can ensure that Azure Managed Databases comply to the Zero Trust architecture aspects described in this article. For example, disallowing the creation of Database with public endpoint, ensure that audit logging is configured for every managed database, disabling local or native database authentication and allowing only Microsoft Entra ID Authentication etc.     
 
 ## References
