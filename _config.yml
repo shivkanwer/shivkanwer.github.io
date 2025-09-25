@@ -58,8 +58,9 @@ reCaptcha:
   siteKey:
   secret:
 atom_feed:
-  path: # blank (default) uses feed.xml
+  path: # blank (default) uses feed.xml  
   hide: # true, false (default)
+  excerpt_only: # true, false (default) - only show excerpt in feed
 search: true # true, false (default)
 search_full_content: # true, false (default)
 search_provider: # lunr (default), algolia, google
@@ -88,9 +89,12 @@ og_image: "/assets/images/bio-photo.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type: # Person or Organization (defaults to Person)
-  name: # If the user or organization name differs from the site's name
+  type: Person # Person or Organization (defaults to Person)
+  name: "Shivkanwer Singh Sidhu" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://twitter.com/shivkanwer"
+    - "https://www.linkedin.com/in/shivkanwer/"
+    - "https://github.com/shivkanwer"
 
 # Analytics
 analytics:
