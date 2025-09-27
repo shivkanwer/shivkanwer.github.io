@@ -5,6 +5,6 @@ layout: home
 author_profile: true
 ---
 
-## Hello, my name is Shivkanwer, Welcome to my blog!
+### Hello, my name is Shivkanwer, Welcome to my blog!
 
-With over a decade of experience in the IT industry, I specialize in designing, implementing, and enhancing cloud-based solutions. I excel in fostering collaborative efforts across multifaceted teams to deliver scalable, dependable architectures tailored to meet diverse business requirements. My extensive knowledge spans various cloud platforms, architectural paradigms, and DevOps methodologies.
+A seasoned and strategic technology leader with over 13 years of experience specializing in translating complex business requirements into robust, scalable solutions. Demonstrates a proven track record in leading and mentoring high-performing, globally distributed teams. Possesses deep, hands-on expertise in architecting and implementing large-scale cloud platforms on both Azure and AWS. Core competencies include Cloud Strategy, Technology Consulting, Platform Engineering, and full-lifecycle Software Development.

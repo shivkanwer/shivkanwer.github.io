@@ -1,0 +1,43 @@
+/* Custom layout: Full width with no author sidebar */
+.wide-no-author {
+  .page {
+    @include breakpoint($large) {
+      float: none; /* Remove float */
+      width: 100%; /* Use full width */
+      padding-right: 0; /* No right padding */
+      margin-left: 0; /* Align with page title */
+      margin-right: 0;
+    }
+
+    @include breakpoint($x-large) {
+      float: none; /* Remove float */
+      width: 100%; /* Use full width */
+      padding-right: 0; /* No right padding */
+      margin-left: 0; /* Align with page title */
+      margin-right: 0;
+    }
+  }
+
+  .page__related {
+    @include breakpoint($large) {
+      float: none; /* Remove float */
+      width: 100%; /* Use full width */
+      padding-right: 0; /* No right padding */
+    }
+
+    @include breakpoint($x-large) {
+      float: none; /* Remove float */
+      width: 100%; /* Use full width */
+      padding-right: 0; /* No right padding */
+    }
+  }
+
+  /* Ensure content aligns properly */
+  #main {
+    max-width: 100%;
+    
+    @include breakpoint($x-large) {
+      max-width: $max-width; /* Respect site's max width */
+    }
+  }
+}

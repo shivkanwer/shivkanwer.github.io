@@ -18,9 +18,9 @@ minimal_mistakes_skin: "default" # "default", "air", "aqua", "contrast", "dark",
 locale: "en-US"
 title: "The Teck Talk"
 title_separator: "-"
-subtitle: "Everything Cloud"
+subtitle: "All things tech"
 name: "Shivkanwer Singh Sidhu"
-description: "I discuss about all things cloud"
+description: "I discuss about all things tech"
 url: "https://thetecktalk.com"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "shivkanwer/shivkanwer.github.io"
@@ -92,7 +92,6 @@ social:
   type: Person # Person or Organization (defaults to Person)
   name: "Shivkanwer Singh Sidhu" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-    - "https://twitter.com/shivkanwer"
     - "https://www.linkedin.com/in/shivkanwer/"
     - "https://github.com/shivkanwer"
 
@@ -107,8 +106,8 @@ analytics:
 author:
   name: "Shivkanwer Singh Sidhu"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Solutions Architect, Technology Enabler"
-  location: "Bangalore, India"
+  bio: "Distinguished Engineer"
+  location: #
   email:
   links:
     - label: "Email"
@@ -117,25 +116,16 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://thetecktalk.com/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/shivkanwer"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/shivkanwer/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/shivkanwer"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/shivkanwer"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/shivkanwer/"
