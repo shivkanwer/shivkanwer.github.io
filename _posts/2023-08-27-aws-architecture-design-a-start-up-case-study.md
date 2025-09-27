@@ -4,7 +4,7 @@ date: 2023-08-27
 excerpt: "I came across an interesting scenario about a start-up looking to migrate their existing application onto cloud (AWS in this case). This blog post outlines my take on the solution. Feedback is welcome!"
 header:
   teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/startup-scenario/startup-scenario-aws-arch.jpg"
-classes: wide
+layout: wide-no-author
 categories:
   - Architecture
 tags:
