@@ -1,4 +1,150 @@
 ---
-layout: home
-author_profile: true
+layout: splash
+title: ""
+author_profile: false
+header:
+  overlay_color: "#1f4e79"
+  overlay_filter: "0.4"
+excerpt: |
+  <div class="hero-author">
+    <div class="author__avatar">
+      <img src="/assets/images/bio-photo.jpg" alt="Shivkanwer Singh Sidhu">
+    </div>
+    <div class="author__content">
+      <h3 class="author__name">Shivkanwer Singh Sidhu</h3>
+      <p class="author__bio">Distinguished Engineer | Cloud Architect | Enterprise Technology | AI & Emerging Solutions</p>
+      <div class="author__urls">
+        <a href="mailto:shivkanwer@gmail.com" target="_blank" rel="noopener noreferrer" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shivkanwer/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/shivkanwer" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://thetecktalk.com/" target="_blank" rel="noopener noreferrer" title="Website">
+          <i class="fas fa-link"></i>
+        </a>
+        <a href="/about/" title="About Me">
+          <i class="fas fa-user"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 ---
+
+{% comment %}
+Separate featured and recent posts sections:
+- Featured section: exactly 3 featured posts (if available)
+- Recent section: 6 most recent posts (excluding featured ones to avoid duplicates)
+{% endcomment %}
+
+{% assign featured_posts = site.posts | where: "featured", true | slice: 0, 3 %}
+{% assign recent_posts = site.posts | where: "featured", nil | slice: 0, 6 %}
+
+{% comment %} Featured Articles Section {% endcomment %}
+{% if featured_posts.size > 0 %}
+<div class="feature">
+  <h2 style="text-align: center; margin: 2em 0 1em 0;">🌟 Featured Articles</h2>
+  
+  <div class="grid__wrapper">
+    {% for post in featured_posts %}
+    <div class="grid__item">
+      <article class="archive__item">
+        {% if post.header.teaser %}
+          <div class="archive__item-teaser">
+            <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+          </div>
+        {% endif %}
+        <h2 class="archive__item-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <p class="page__meta">
+          <i class="far fa-calendar-alt"></i>
+          <time>{{ post.date | date: "%B %d, %Y" }}</time>
+          {% if post.featured %}
+            <span class="featured-label">⭐ Featured</span>
+          {% endif %}
+        </p>
+        <div class="archive__item-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 25 }}
+          <p><a href="{{ post.url | relative_url }}" class="btn btn--primary">Read More</a></p>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% comment %} Recent Articles Section {% endcomment %}
+<div class="feature" style="margin-top: 3em;">
+  <h2 style="text-align: center; margin: 2em 0 1em 0;">📰 Recent Articles</h2>
+  
+  <div class="grid__wrapper">
+    {% for post in recent_posts %}
+    <div class="grid__item">
+      <article class="archive__item">
+        {% if post.header.teaser %}
+          <div class="archive__item-teaser">
+            <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+          </div>
+        {% endif %}
+        <h2 class="archive__item-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <p class="page__meta">
+          <i class="far fa-calendar-alt"></i>
+          <time>{{ post.date | date: "%B %d, %Y" }}</time>
+        </p>
+        <div class="archive__item-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 25 }}
+          <p><a href="{{ post.url | relative_url }}" class="btn btn--primary">Read More</a></p>
+        </div>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <div style="text-align: center; margin-top: 2em;">
+    <a href="/posts/" class="btn btn--primary btn--large">View All Posts</a>
+  </div>
+</div>
+
+{% comment %} Category Navigation Section {% endcomment %}
+<div class="feature" style="margin-top: 3em; background: #f8f9fa; padding: 2em; border-radius: 8px;">
+  <h2 style="text-align: center; margin-bottom: 1em;">🔍 Explore by Topic</h2>
+  
+  <div class="grid__wrapper">
+    <div class="grid__item">
+      <article class="archive__item" style="text-align: center;">
+        <h3 class="archive__item-title">🤖 AI & Machine Learning</h3>
+        <div class="archive__item-excerpt">
+          <p>Understanding LLMs, neural networks, and building AI applications</p>
+          <p><a href="/categories/#ai" class="btn btn--primary">Explore AI →</a></p>
+        </div>
+      </article>
+    </div>
+    
+    <div class="grid__item">
+      <article class="archive__item" style="text-align: center;">
+        <h3 class="archive__item-title">☸️ Kubernetes & Cloud Native</h3>
+        <div class="archive__item-excerpt">
+          <p>Container orchestration, microservices, and cloud-native architectures</p>
+          <p><a href="/categories/#kubernetes" class="btn btn--primary">Learn K8s →</a></p>
+        </div>
+      </article>
+    </div>
+    
+    <div class="grid__item">
+      <article class="archive__item" style="text-align: center;">
+        <h3 class="archive__item-title">🏗️ Cloud Architecture</h3>
+        <div class="archive__item-excerpt">
+          <p>Enterprise-grade solutions, case studies, and best practices</p>
+          <p><a href="/categories/#architecture" class="btn btn--primary">View Designs →</a></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

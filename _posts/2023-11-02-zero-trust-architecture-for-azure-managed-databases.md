@@ -1,6 +1,7 @@
 ---
 title: "Zero Trust Architecture for Azure Managed Databases"
 date: 2023-11-02
+featured: true
 excerpt: "In this blog post, I delve into the intricacies of constructing a Zero Trust architecture tailored explicitly for Azure Managed Databases. While Zero Trust is a multifaceted concept, the primary focus of this blog centers on its application within the Azure managed database landscape."
 header:
   teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/zero-trust-arch/zero-trust-arch-for-azure-databases.jpg"

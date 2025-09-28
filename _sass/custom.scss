@@ -57,3 +57,466 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }
+
+/* Featured label styling */
+.featured-label {
+  background: #ffd93d;
+  color: #333;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-left: 0.5em;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Homepage Layout Fixes */
+.splash {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+  
+  /* Center align all section headings */
+  h2, h3 {
+    text-align: center !important;
+    margin: 2em 0 1.5em 0 !important;
+  }
+  
+  .feature {
+    margin-bottom: 4em;
+    width: 100%;
+    
+    /* Featured Articles Row - 3 columns max */
+    &:first-child .grid__wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      margin: 0;
+      
+      .grid__item {
+        flex: 0 1 320px;
+        max-width: 320px;
+        min-width: 280px;
+      }
+      
+      @media (max-width: 1024px) {
+        .grid__item {
+          flex: 0 1 300px;
+          max-width: 300px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .grid__item {
+          flex: 1 1 100%;
+          max-width: none;
+        }
+      }
+    }
+    
+    /* Recent Articles Row - 2x3 grid (6 max) */
+    &:nth-child(2) .grid__wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      margin: 0;
+      
+      .grid__item {
+        flex: 0 1 320px;
+        max-width: 320px;
+        min-width: 280px;
+      }
+      
+      @media (max-width: 1024px) {
+        .grid__item {
+          flex: 0 1 300px;
+          max-width: 300px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .grid__item {
+          flex: 1 1 100%;
+          max-width: none;
+        }
+      }
+    }
+    
+    /* Category Navigation Row - 3 columns */
+    &:last-child .grid__wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      margin: 0;
+      
+      .grid__item {
+        flex: 0 1 300px;
+        max-width: 350px;
+        min-width: 280px;
+      }
+      
+      @media (max-width: 768px) {
+        .grid__item {
+          flex: 1 1 100%;
+          max-width: none;
+        }
+      }
+    }
+  }
+  
+  /* Archive Item Styling */
+  .archive__item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .archive__item-teaser {
+      flex-shrink: 0;
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.2s ease;
+      }
+    }
+    
+    .archive__item-title {
+      font-size: 1.05em;
+      line-height: 1.3;
+      margin: 1em 1em 0.5em 1em;
+      flex-shrink: 0;
+      font-weight: 600;
+      
+      a {
+        text-decoration: none;
+        color: #333;
+        
+        &:hover {
+          color: #007acc;
+          text-decoration: none;
+        }
+      }
+    }
+    
+    .page__meta {
+      flex-shrink: 0;
+      margin: 0 1em 0.5em 1em;
+      font-size: 0.85em;
+      color: #666;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5em;
+    }
+    
+    .archive__item-excerpt {
+      font-size: 0.85em;
+      line-height: 1.4;
+      color: #555;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 1em 1em 1em;
+      
+      p:last-child {
+        margin-top: auto;
+        padding-top: 1em;
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  /* Compact Category cards styling */
+  .feature:last-child {
+    background: #f8f9fa;
+    padding: 1.5em 2em; /* Reduced from 3em 2em */
+    border-radius: 12px;
+    margin-top: 3em; /* Reduced from 4em */
+    
+    /* Adjust heading spacing for this section */
+    h2 {
+      margin: 0 0 1.25em 0 !important; /* Reduced from 2em 0 1.5em 0 */
+    }
+    
+    .archive__item {
+      background: #fff;
+      text-align: center;
+      padding: 1.25em 1em; /* Reduced from 2em 1em */
+      
+      .archive__item-title {
+        margin: 0 0 0.75em 0; /* Reduced from 0 0 1em 0 */
+        color: #333;
+      }
+      
+      .archive__item-excerpt {
+        margin: 0;
+        
+        p:first-child {
+          margin-bottom: 1em; /* Reduced from 1.5em */
+          color: #666;
+        }
+        
+        p:last-child {
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Compact Responsive Hero Author Profile - Using theme classes */
+.hero-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em; /* Reduced from 2em */
+  margin-top: 1.25em; /* Reduced from 2em */
+  padding: 1.5em 2em; /* Reduced vertical padding from 2em to 1.5em */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px; /* Slightly smaller radius */
+  backdrop-filter: blur(10px);
+  
+  /* Mobile First - Stack vertically on small screens */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1em; /* Reduced from 1.5em */
+    text-align: center;
+    padding: 1.25em 1em; /* Reduced from 1.5em */
+    margin-top: 1em; /* Reduced from 1.5em */
+  }
+  
+  /* Very small screens */
+  @media (max-width: 480px) {
+    gap: 0.75em; /* Reduced from 1em */
+    padding: 1em;
+    margin-top: 0.75em; /* Reduced from 1em */
+  }
+  
+  /* Medium screens - reduce gap slightly */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    gap: 1.25em; /* Reduced from 1.5em */
+    padding: 1.25em 1.5em; /* Reduced from 1.5em */
+  }
+  
+  /* Override theme's author avatar for hero section - Compact Responsive */
+  .author__avatar {
+    display: block;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    
+    img {
+      /* Desktop: Compact profile image */
+      width: 120px; /* Reduced from 150px */
+      height: 120px; /* Reduced from 150px */
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.8) !important; /* Reduced from 4px */
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
+      padding: 0 !important;
+      object-fit: cover;
+      
+      /* Tablet: Smaller profile image */
+      @media (max-width: 1024px) {
+        width: 100px; /* Reduced from 120px */
+        height: 100px; /* Reduced from 120px */
+        border: 2px solid rgba(255, 255, 255, 0.8) !important; /* Reduced from 3px */
+      }
+      
+      /* Mobile: More compact profile image */
+      @media (max-width: 768px) {
+        width: 85px; /* Reduced from 100px */
+        height: 85px; /* Reduced from 100px */
+        border: 2px solid rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      /* Very small screens: Very compact profile image */
+      @media (max-width: 480px) {
+        width: 70px; /* Reduced from 80px */
+        height: 70px; /* Reduced from 80px */
+        border: 2px solid rgba(255, 255, 255, 0.8) !important;
+      }
+    }
+  }
+  
+  /* Override theme's author content for hero section - Responsive */
+  .author__content {
+    display: block;
+    width: auto;
+    padding: 0;
+    color: white;
+    
+    /* Mobile: Center align text */
+    @media (max-width: 768px) {
+      text-align: center;
+      max-width: 100%;
+    }
+    
+    /* Very small screens: More compact */
+    @media (max-width: 480px) {
+      max-width: 280px;
+    }
+  }
+  
+  /* Override theme's author name for hero section - Compact */
+  .author__name {
+    margin: 0 0 0.35em 0 !important; /* Reduced bottom margin from 0.5em */
+    font-weight: 600;
+    color: white !important;
+    line-height: 1.2;
+    
+    /* Desktop: Medium name size */
+    font-size: 1.5em !important; /* Reduced from 1.8em */
+    
+    /* Tablet: Slightly smaller name */
+    @media (max-width: 1024px) {
+      font-size: 1.35em !important; /* Reduced from 1.6em */
+    }
+    
+    /* Mobile: Compact name */
+    @media (max-width: 768px) {
+      font-size: 1.25em !important; /* Reduced from 1.4em */
+      margin-bottom: 0.5em !important; /* Reduced from 0.75em */
+    }
+    
+    /* Very small screens: Very compact name */
+    @media (max-width: 480px) {
+      font-size: 1.1em !important; /* Reduced from 1.2em */
+      margin-bottom: 0.4em !important; /* Reduced from 0.5em */
+    }
+  }
+  
+  /* Override theme's author bio for hero section - Compact */
+  .author__bio {
+    margin: 0 0 0.75em 0 !important; /* Reduced bottom margin from 1em */
+    line-height: 1.3; /* Reduced from 1.4 for tighter text */
+    color: rgba(255, 255, 255, 0.9) !important;
+    
+    /* Desktop: Compact bio text */
+    font-size: 1em; /* Reduced from 1.1em */
+    
+    /* Tablet: Slightly smaller bio text */
+    @media (max-width: 1024px) {
+      font-size: 0.95em; /* Reduced from 1.05em */
+    }
+    
+    /* Mobile: Compact bio text */
+    @media (max-width: 768px) {
+      font-size: 0.9em; /* Reduced from 1em */
+      line-height: 1.4;
+      margin-bottom: 1em !important; /* Reduced from 1.25em */
+    }
+    
+    /* Very small screens: Very compact bio text */
+    @media (max-width: 480px) {
+      font-size: 0.85em; /* Reduced from 0.95em */
+      line-height: 1.3;
+      margin-bottom: 0.75em !important; /* Reduced from 1em */
+    }
+  }
+  
+  /* Override theme's author urls for hero section - Compact */
+  .author__urls {
+    /* CRITICAL: Override theme's display: none with display: flex for all screen sizes */
+    display: flex !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    list-style-type: none !important;
+    
+    gap: 0.8em; /* Reduced from 1em */
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+    /* Remove theme's pseudo-elements */
+    &:before,
+    &:after {
+      display: none !important;
+    }
+    
+    /* Mobile and below: Center social links only when stacked */
+    @media (max-width: 768px) {
+      gap: 1em; /* Reduced from 1.2em */
+      justify-content: center;
+    }
+    
+    /* Very small screens: Smaller gap */
+    @media (max-width: 480px) {
+      gap: 0.8em; /* Reduced from 1em */
+      justify-content: center;
+    }
+    
+    a {
+      color: rgba(255, 255, 255, 0.8) !important;
+      transition: all 0.3s ease;
+      text-decoration: none !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+      display: inline-block !important;
+      
+      /* Desktop: Medium social icons */
+      font-size: 1.4em; /* Reduced from 1.6em */
+      
+      /* Tablet: Slightly smaller social icons */
+      @media (max-width: 1024px) {
+        font-size: 1.3em; /* Reduced from 1.5em */
+      }
+      
+      /* Mobile: Compact social icons */
+      @media (max-width: 768px) {
+        font-size: 1.25em; /* Reduced from 1.4em */
+      }
+      
+      /* Very small screens: Very compact social icons */
+      @media (max-width: 480px) {
+        font-size: 1.15em; /* Reduced from 1.3em */
+      }
+      
+      &:hover {
+        color: #ffd93d !important;
+        transform: translateY(-2px);
+      }
+      
+      /* Ensure icons are visible */
+      i {
+        display: inline-block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    }
+  }
+}
+
+/* Hide page title in hero section on homepage */
+body.layout--splash .page__hero--overlay #page-title {
+  display: none !important;
+}
+
+/* Compact hero overlay padding */
+.page__hero--overlay {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}

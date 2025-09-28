@@ -2,7 +2,7 @@
 title: "Inner Workings of LLMs for Developers - Part 1"
 date: 2025-09-28
 layout: wide-no-author
-#classes: wide
+featured: true
 excerpt: "How do you teach a machine that the word 'crane' can be a bird or a piece of construction equipment? For developers navigating the world of LLMs, understanding this core challenge is key to building a solid foundation. In Part 1 of our 'Inner Workings of LLMs' series for developers, we tackle this core challenge by exploring the classic Bag-of-Words model. We'll break down how it converts text into numbers, its real-world applications, and its critical limitations—all without the complex math."
 header:
   teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/llms-for-developers/bow-step1.jpg"
