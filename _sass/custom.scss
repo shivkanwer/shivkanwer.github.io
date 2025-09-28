@@ -41,3 +41,19 @@
     }
   }
 }
+
+/* Image Caption Styles */
+.image-with-caption {
+  text-align: center;
+  margin: 2em 0;
+  
+  img {
+    width: 100%;
+    max-width: 1150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
