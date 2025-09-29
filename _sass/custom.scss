@@ -520,3 +520,18 @@ body.layout--splash .page__hero--overlay #page-title {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+
+.page__meta-author .author-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #007acc;
+    text-decoration: underline;
+  }
+  
+  &:visited {
+    color: inherit;
+  }
+}

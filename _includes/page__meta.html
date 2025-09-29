@@ -10,12 +10,30 @@
       </span>
     {% endif %}
 
-    {% if document.read_time and document.show_date %}<span class="page__meta-sep"></span>{% endif %}
+    {% comment %} Add author name after date {% endcomment %}
+    {% assign author = document.author | default: document.authors[0] | default: site.author %}
+    {% if author and document.show_date and document.date %}
+      <span class="page__meta-sep"></span>
+      <span class="page__meta-author">
+        <i class="fas fa-fw fa-user" aria-hidden="true"></i>
+        {% comment %} Check if this is the site author (default) - if so, make it a link {% endcomment %}
+        {% if author == site.author %}
+          {% if author.name %}
+            <a href="/about/" class="author-link">{{ author.name }}</a>
+          {% else %}
+            <a href="/about/" class="author-link">{{ author }}</a>
+          {% endif %}
+        {% else %}
+          {% comment %} Different author (per-post override) - no link {% endcomment %}
+          {% if author.name %}{{ author.name }}{% else %}{{ author }}{% endif %}
+        {% endif %}
+      </span>
+    {% endif %}
 
     {% if document.read_time %}
       {% assign words_per_minute = document.words_per_minute | default: site.words_per_minute | default: 200 %}
       {% assign words = document.content | strip_html | number_of_words %}
-
+      <span class="page__meta-sep"></span>
       <span class="page__meta-readtime">
         <i class="far {% if include.type == 'grid' and document.read_time and document.show_date %}fa-fw {% endif %}fa-clock" aria-hidden="true"></i>
         {% if words < words_per_minute %}
