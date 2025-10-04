@@ -5,7 +5,7 @@ layout: wide-no-author
 featured: true
 excerpt: "The Bag-of-Words model gave developers numbers, but not true meaning. So, what came next? Part 2 of our 'Inner Workings of LLMs for Developers' series explores the revolutionary leap to Word Embeddings and the Word2Vec model. We break down how machines finally learned to understand context and semantic relationships, all without the complex maths, to build a stronger foundation for today's advanced AI."
 header:
-  teaser: "../assets/images/llms-for-developers/w2v.jpeg"
+  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/llms-for-developers/w2v.jpeg"
 categories:
   - AI
 tags:
