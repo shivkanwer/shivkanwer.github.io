@@ -80,11 +80,11 @@
   /* Center align all section headings */
   h2, h3 {
     text-align: center !important;
-    margin: 2em 0 1.5em 0 !important;
+    /*margin: 2em 0 1.5em 0 !important;*/
   }
   
   .feature {
-    margin-bottom: 4em;
+    /*margin-bottom: 4em;*/
     width: 100%;
     
     /* Featured Articles Row - 3 columns max */
@@ -198,7 +198,7 @@
     }
     
     .archive__item-title {
-      font-size: 1.05em;
+      font-size: 1em;
       line-height: 1.3;
       margin: 1em 1em 0.5em 1em;
       flex-shrink: 0;
@@ -519,6 +519,44 @@ body.layout--splash .page__hero--overlay #page-title {
 .page__hero--overlay {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+}
+
+/* Fix heading size hierarchy - keep h2 original size as reference, make h3/h4 much more distinct */
+.wide-no-author .page__content {
+  h2 {
+    font-size: 1.25em !important; /* Original theme size - use as reference */
+    margin: 1.5em 0 0.75em 0; /* Keep the improved spacing */
+  }
+  
+  h3 {
+    font-size: 1.05em !important; /* More noticeable reduction from h2 (1.25em) */
+    margin: 1.25em 0 0.5em 0; /* Proportional spacing */
+    font-weight: 600 !important; /* Slightly bolder for distinction */
+  }
+  
+  h4 {
+    font-size: 0.9em !important; /* Significantly smaller than h3 for clear hierarchy */
+    margin: 1em 0 0.5em 0; /* Tighter spacing for smaller headings */
+    font-weight: 700 !important; /* Strong weight to compensate for smaller size */
+  }
+  
+  h5 {
+    font-size: 0.85em !important; /* Clearly smaller than h4 */
+    margin: 1em 0 0.5em 0;
+    font-weight: 700 !important;
+  }
+  
+  h6 {
+    font-size: 0.8em !important; /* Smallest heading size */
+    margin: 1em 0 0.5em 0;
+    font-weight: 700 !important; /* Strong weight for distinction */
+    text-transform: uppercase; /* Additional visual distinction */
+    letter-spacing: 0.5px; /* Slight letter spacing for readability */
+  }
+
+  blockquote{
+    margin: 0 !important;
+  }
 }
 
 .page__meta-author .author-link {
