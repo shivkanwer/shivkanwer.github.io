@@ -94,7 +94,7 @@ Even though the BoW model is quite useful in several use cases, it has several l
 
 As we've seen, the Bag-of-Words model is blind to both context and meaning, treating words like 'price' and 'cost' as completely unrelated. So, how do we move from simply counting words to _truly understanding_ them? 
 
-In Part 2 of this series, we'll explore the revolutionary breakthrough that did just that: **Word Embeddings** and the groundbreaking **Word2Vec** model.
+In [Part 2](https://thetecktalk.com/ai/Inner-workings-of-LLMs-for-Developers-part2/) of this series, we'll explore the revolutionary breakthrough that did just that: **Word Embeddings** and the groundbreaking **Word2Vec** model.
 
 ## References
 - [Bag-of-words Model: Wikipedia](https://en.wikipedia.org/wiki/Bag-of-words_model){:target="_blank"}
