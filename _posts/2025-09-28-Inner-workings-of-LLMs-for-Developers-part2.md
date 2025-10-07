@@ -293,7 +293,8 @@ This optimization is what makes training Word2Vec on massive vocabularies feasib
 
 Repeating this process multiple times pulls the vectors for related words like "doctor" and "nurse" closer together, while pushing unrelated words like "car" and "phone" further apart. The final result of this training process is the Embedding Matrix that serves as a powerful knowledge base that captures the words’ underlying meaning, context, and semantic relationship, serving as a foundational building block for nearly all modern Natural Language Processing (NLP) tasks.
 
-### Challenge with Word2Vec
+### Challenges with Word2Vec
+#### The Polysemy Problem: One word, many meanings
 The biggest challenge for Word2Vec is that it generates one single, static vector for each unique word in its vocabulary. This vector is created during training by averaging all the different contexts in which the word appeared.
 
 In our example, the model was trained on the sentence: “The nurse assisted the doctor with the patient’s treatment at the hospital.” During the training process, the only context the model ever saw for the word "doctor" was purely medical. It appeared alongside words like: nurse, assisted, patient, treatment and hospital. Because of this, the training process created exactly one vector for the word "doctor" which is very close to the vectors for other medical terms. 
@@ -305,7 +306,12 @@ In this sentence, "doctor" refers to a Ph.D., an academic who holds the highest 
 
 When the model processes this new sentence, it looks up the word "doctor" in its Embedding Matrix. It has no choice but to retrieve the one and only vector it has, the one that represents a medical doctor. The model is trying to understand a sentence about academic achievement using a vector that represents medical practice. This is a fundamental mismatch. It has no mechanism to adapt the meaning of "doctor" based on the surrounding words like "philosophy" or "thesis." This inability to distinguish between different senses of a word is the essence of the problem.
 
-So, how do we create word embeddings that are not static, but dynamic and context-aware? How can a model generate a different vector for 'doctor' depending on the other words in the sentence?
+#### Blind to Order and Syntax
+A second, equally critical flaw of static, window-based models like Word2Vec is their general disregard for word order and syntax. Word2Vec's training process uses a context window, treating the words surrounding a target word as a "bag of words". While it learns which words appear near each other, it does not effectively encode the grammatical structure or the precise positional relationships between them.   
+
+The classic example "Man bites dog" versus "Dog bites man" illustrates this perfectly. Both sentences contain the exact same words, and in a small context window, the co-occurrence patterns are identical. A model like Word2Vec would see "dog," "bites," and "man" in close proximity in both cases and would struggle to distinguish the profound difference in meaning. This inability to capture how meaning is constructed from the arrangement of words, is a severe limitation for any task that requires more than a surface-level understanding of text.
+
+So, how do we create word embeddings that are not static, but dynamic and context-aware?
 
 We'll answer that question in Part 3.
 
