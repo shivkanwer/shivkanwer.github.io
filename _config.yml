@@ -80,7 +80,7 @@ naver_site_verification:
 
 # Social Sharing
 twitter:
-  username:
+  username: "thetecktalk"
 facebook:
   username:
   app_id:
@@ -106,7 +106,7 @@ analytics:
 author:
   name: "Shivkanwer Singh Sidhu"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Distinguished Engineer"
+  bio: "Distinguished Architect"
   location: #
   email:
   links:
@@ -122,6 +122,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/shivkanwer"
+    - label: "@thetecktalk"                                                   
+      icon: "fab fa-fw fa-x-twitter"                                 
+      url: "https://x.com/thetecktalk"
 
 # Site Footer
 footer:
@@ -132,6 +135,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/shivkanwer"
+    - label: "@thetecktalk"                                                     
+      icon: "fab fa-fw fa-x-twitter"                                 
+      url: "https://x.com/thetecktalk"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
