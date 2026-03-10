@@ -478,6 +478,18 @@ select {
   }
 }
 
+/* Fix sidebar author avatar to be a perfect circle on all screen sizes */
+.author__avatar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+
+  @include breakpoint($large) {
+    width: 160px;
+    height: 160px;
+  }
+}
+
 /* Image Caption Styles */
 .image-with-caption {
   text-align: center;
