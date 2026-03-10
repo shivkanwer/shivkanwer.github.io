@@ -56,7 +56,7 @@ Nine functions. One ritual. And when you look closely, three things jump out.
 
 **The most valuable functions are fundamentally human but the PR serves them poorly.** Knowledge transfer, accountability, shared ownership. These matter deeply. But a reviewer clicking "Approve" doesn't mean they absorbed the design reasoning or learned anything about the system. Pair programming, walkthroughs, and design discussions do this better than async PR comments ever have.
 
-**The most impactful function happens at the wrong time.** Architecture validation — the one that catches the most expensive mistakes — only happens after code is written. If the architecture is wrong, the feedback is too late and the rework is costly.
+**The most impactful function happens at the wrong time.** Architecture validation (the one that catches the most expensive mistakes) only happens after code is written. If the architecture is wrong, the feedback is too late and the rework is costly.
 
 Now consider what happens as agents generate more of the code. Michael Truell, CEO of Cursor, recently [shared](https://cursor.com/blog/third-era) that 35% of the PRs they merge internally are created by autonomous agents in cloud VMs. He expects the vast majority of dev work to be done by agents within a year.
 
