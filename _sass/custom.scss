@@ -1,4 +1,90 @@
+// === CSS Custom Properties for Theme Switching ===
+
+// Light theme (default)
+:root {
+  --color-bg: #fff;
+  --color-bg-muted: #f8f9fa;
+  --color-bg-surface: #fff;
+  --color-text: #3d3d3d;
+  --color-text-primary: #333;
+  --color-text-secondary: #555;
+  --color-text-muted: #666;
+  --color-accent: #007acc;
+  --color-accent-hover: #00639e;
+  --color-featured: #ffd93d;
+  --color-border: #f2f3f3;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --color-link: #2f7d95;
+  --color-link-hover: #235d6f;
+  --color-code-bg: #fafafa;
+  --color-footer-bg: #f2f3f3;
+  --color-masthead-link: #6f777d;
+  --color-masthead-link-hover: #3d4144;
+  --color-hero-overlay: #1f4e79;
+  --color-card-bg: #fff;
+  --color-featured-text: #333;
+  --icon-theme-toggle: "\f186";
+}
+
+// Dark theme
+[data-theme="dark"] {
+  --color-bg: #1a1d23;
+  --color-bg-muted: #252a34;
+  --color-bg-surface: #252a34;
+  --color-text: #e0e0e0;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #aaa;
+  --color-accent: #3a9fd8;
+  --color-accent-hover: #5bb4e5;
+  --color-featured: #ffd93d;
+  --color-border: #3a3f48;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --color-link: #5bb4e5;
+  --color-link-hover: #8ad0f5;
+  --color-code-bg: #1e2229;
+  --color-footer-bg: #14161a;
+  --color-masthead-link: #e0e0e0;
+  --color-masthead-link-hover: #b0b0b0;
+  --color-hero-overlay: #0f2a43;
+  --color-card-bg: #252a34;
+  --color-featured-text: #1a1d23;
+  --icon-theme-toggle: "\f185";
+}
+
+// Auto dark mode (respects OS preference when no explicit user choice)
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #1a1d23;
+    --color-bg-muted: #252a34;
+    --color-bg-surface: #252a34;
+    --color-text: #e0e0e0;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #b0b0b0;
+    --color-text-muted: #999;
+    --color-accent: #3a9fd8;
+    --color-accent-hover: #5bb4e5;
+    --color-featured: #ffd93d;
+    --color-border: #3a3f48;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --color-link: #5bb4e5;
+    --color-link-hover: #8ad0f5;
+    --color-code-bg: #1e2229;
+    --color-footer-bg: #14161a;
+    --color-masthead-link: #e0e0e0;
+    --color-masthead-link-hover: #b0b0b0;
+    --color-hero-overlay: #0f2a43;
+    --color-card-bg: #252a34;
+    --color-featured-text: #1a1d23;
+    --icon-theme-toggle: "\f185";
+  }
+}
+
 // === Design Tokens ===
+// (kept for SCSS-level operations; runtime colors use CSS custom properties above)
 
 // Colors
 $accent-color: #007acc;
@@ -27,6 +113,318 @@ $gap-lg: 2em;
 // Transitions
 $transition-fast: 0.2s ease;
 $transition-normal: 0.3s ease;
+
+// === Theme Color Overrides (runtime-switchable) ===
+// These override Minimal Mistakes compiled values with CSS custom properties.
+
+html {
+  background-color: var(--color-bg);
+}
+
+body {
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+.masthead {
+  background-color: var(--color-bg);
+  border-bottom-color: var(--color-border);
+}
+
+.greedy-nav {
+  background: var(--color-bg);
+
+  a {
+    color: var(--color-masthead-link);
+
+    &:hover {
+      color: var(--color-masthead-link-hover);
+    }
+  }
+
+  .visible-links a:before {
+    background: var(--color-accent);
+  }
+
+  button {
+    color: var(--color-masthead-link);
+  }
+}
+
+.greedy-nav .hidden-links {
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-md);
+
+  a {
+    color: var(--color-text-primary);
+
+    &:hover {
+      color: var(--color-accent);
+      background: var(--color-bg-muted);
+    }
+  }
+}
+
+.page__footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-text-muted);
+
+  a {
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+p > code,
+li > code,
+td > code,
+h2 > code,
+h3 > code,
+h4 > code {
+  background: var(--color-code-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+table {
+  color: var(--color-text);
+
+  thead {
+    background-color: var(--color-bg-muted);
+    border-bottom-color: var(--color-border);
+  }
+
+  td {
+    border-bottom-color: var(--color-border);
+  }
+}
+
+.notice,
+.notice--primary,
+.notice--info,
+.notice--warning,
+.notice--success,
+.notice--danger {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] {
+  .notice             { background-color: #2a2e36; }
+  .notice--primary    { background-color: #2a3340; }
+  .notice--info       { background-color: #1e3a4a; }
+  .notice--warning    { background-color: #3a3520; }
+  .notice--success    { background-color: #1e3a2a; }
+  .notice--danger     { background-color: #3a1e1e; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    .notice             { background-color: #2a2e36; }
+    .notice--primary    { background-color: #2a3340; }
+    .notice--info       { background-color: #1e3a4a; }
+    .notice--warning    { background-color: #3a3520; }
+    .notice--success    { background-color: #1e3a2a; }
+    .notice--danger     { background-color: #3a1e1e; }
+  }
+}
+
+blockquote {
+  border-left-color: var(--color-accent);
+  color: var(--color-text-secondary);
+}
+
+// Post/page title
+.page__title a {
+  color: var(--color-text-primary);
+}
+
+// Post meta (date, author, reading time) — theme sets color:#646769
+.page__meta,
+.comment__date {
+  color: var(--color-text-muted);
+}
+
+.page__content {
+  h2 {
+    border-bottom-color: var(--color-border);
+  }
+}
+
+// Social icons — theme sets color:#3d4144 directly on icon elements
+.social-icons .fas,
+.social-icons .fab,
+.social-icons .far,
+.social-icons .fal {
+  color: var(--color-text-secondary);
+}
+
+// Back to top link
+.back-to-top {
+  color: var(--color-text-muted);
+}
+
+// Archive/taxonomy pages — titles, counts, subtitles
+.taxonomy__title {
+  color: var(--color-text-muted);
+}
+
+.taxonomy__count {
+  color: var(--color-text-muted);
+}
+
+.archive__subtitle {
+  color: var(--color-text-muted);
+  border-bottom-color: var(--color-border);
+}
+
+// Taxonomy item links (tags, categories)
+.page__taxonomy-item {
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+// Figure captions
+figcaption {
+  color: var(--color-text-muted);
+}
+
+// TOC
+.toc {
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+
+  .toc__menu a {
+    color: var(--color-text-muted);
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+  }
+
+  .active a {
+    color: var(--color-text-primary);
+  }
+}
+
+// Nav sidebar labels
+.nav__list label {
+  color: var(--color-text-muted);
+}
+
+// Follow button (about page sidebar)
+.btn--inverse {
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+  background-color: var(--color-bg-muted);
+}
+
+// Form elements
+input,
+textarea,
+select {
+  color: var(--color-text);
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-border);
+}
+
+// Pagination (pager variant)
+.pagination--pager {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+// Footer icon override — theme sets .page__footer .fas color separately
+.page__footer .fas,
+.page__footer .fab,
+.page__footer .far,
+.page__footer .fal {
+  color: var(--color-text-secondary);
+}
+
+.search-content {
+  background-color: var(--color-bg);
+
+  .search-input {
+    color: var(--color-text);
+    background-color: var(--color-bg-surface);
+    border-color: var(--color-border);
+  }
+}
+
+.pagination a,
+.pagination span {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.breadcrumbs {
+  ol {
+    color: var(--color-text-muted);
+
+    a {
+      color: var(--color-link);
+    }
+  }
+}
+
+.sidebar {
+  .author__name {
+    color: var(--color-text-primary);
+  }
+
+  .author__bio {
+    color: var(--color-text-secondary);
+  }
+
+  .author__urls a {
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.taxonomy__section .archive__item-title a {
+  color: var(--color-text-primary);
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+[data-theme="dark"] .btn--twitter {
+  background-color: #333 !important;
+
+  &:hover {
+    background-color: #555 !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn--twitter {
+    background-color: #333 !important;
+
+    &:hover {
+      background-color: #555 !important;
+    }
+  }
+}
 
 /* Override Twitter button color to X brand black */
 .btn--twitter {
@@ -92,14 +490,14 @@ $transition-normal: 0.3s ease;
     display: block;
     margin: 0 auto;
     border-radius: $radius-sm;
-    box-shadow: $shadow-sm;
+    box-shadow: var(--shadow-sm);
   }
 }
 
 /* Featured label styling */
 .featured-label {
-  background: $featured-color;
-  color: $text-primary;
+  background: var(--color-featured);
+  color: var(--color-featured-text);
   padding: 2px 6px;
   border-radius: $radius-sm;
   font-size: 0.75em;
@@ -125,6 +523,10 @@ $transition-normal: 0.3s ease;
     width: 100%;
 
     /* Featured Articles Row - 3 columns max */
+    &:first-child .archive__item {
+      border-top: 3px solid var(--color-accent);
+    }
+
     &:first-child .grid__wrapper {
       display: flex;
       justify-content: center;
@@ -207,9 +609,9 @@ $transition-normal: 0.3s ease;
 
   /* Archive Item Styling */
   .archive__item {
-    background: $bg-surface;
+    background: var(--color-card-bg);
     border-radius: $radius-sm;
-    box-shadow: $shadow-sm;
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
     height: 100%;
     display: flex;
@@ -218,7 +620,7 @@ $transition-normal: 0.3s ease;
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: $shadow-md;
+      box-shadow: var(--shadow-md);
     }
 
     .archive__item-teaser {
@@ -243,20 +645,36 @@ $transition-normal: 0.3s ease;
 
       a {
         text-decoration: none;
-        color: $text-primary;
+        color: var(--color-text-primary);
+        transition: color $transition-fast;
 
         &:hover {
-          color: $accent-color;
+          color: var(--color-accent);
           text-decoration: none;
         }
+
+        &:focus {
+          outline: none;
+        }
       }
+    }
+
+    &:hover .archive__item-title a {
+      color: var(--color-accent);
+    }
+
+    &:focus-within {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
     }
 
     .page__meta {
       flex-shrink: 0;
       margin: 0 1em 0.5em 1em;
       font-size: 0.85em;
-      color: $text-muted;
+      color: var(--color-text-muted);
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -266,7 +684,7 @@ $transition-normal: 0.3s ease;
     .archive__item-excerpt {
       font-size: 0.85em;
       line-height: 1.4;
-      color: $text-secondary;
+      color: var(--color-text-secondary);
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -283,23 +701,23 @@ $transition-normal: 0.3s ease;
 
   /* Compact Category cards styling */
   .feature:last-child {
-    background: $bg-muted;
+    background: var(--color-bg-muted);
     padding: $gap-md $gap-lg;
     border-radius: $radius-lg;
-    margin-top: 3em;
+    margin-top: 2em;
 
     h2 {
       margin: 0 0 1.25em 0;
     }
 
     .archive__item {
-      background: $bg-surface;
+      background: var(--color-card-bg);
       text-align: center;
       padding: 1.25em 1em;
 
       .archive__item-title {
         margin: 0 0 0.75em 0;
-        color: $text-primary;
+        color: var(--color-text-primary);
       }
 
       .archive__item-excerpt {
@@ -307,7 +725,7 @@ $transition-normal: 0.3s ease;
 
         p:first-child {
           margin-bottom: 1em;
-          color: $text-muted;
+          color: var(--color-text-muted);
         }
 
         p:last-child {
@@ -319,9 +737,76 @@ $transition-normal: 0.3s ease;
   }
 }
 
+/* Related posts card styling (matches homepage cards) */
+.page__related .archive__item {
+  background: var(--color-card-bg);
+  border-radius: $radius-sm;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:hover .archive__item-title a {
+    color: var(--color-accent);
+  }
+
+  &:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  .archive__item-teaser img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .archive__item-title {
+    font-size: 1em;
+    line-height: 1.3;
+    margin: 1em 1em 0.5em 1em;
+    flex-shrink: 0;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      color: var(--color-text-primary);
+      transition: color $transition-fast;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .page__meta {
+    flex-shrink: 0;
+    margin: 0 1em 0.5em 1em;
+    font-size: 0.85em;
+    color: var(--color-text-muted);
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+    flex-grow: 1;
+    margin: 0 1em 1em 1em;
+  }
+}
+
 /* Utility classes */
 .feature--recent {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .section__cta {
@@ -475,7 +960,7 @@ body.layout--splash .page__hero--overlay {
     font-size: 1.4em;
     margin: 1.75em 0 0.75em 0;
     font-weight: 700;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.3em;
   }
 
@@ -489,7 +974,7 @@ body.layout--splash .page__hero--overlay {
     font-size: 1.0em;
     margin: 1.25em 0 0.5em 0;
     font-weight: 600;
-    color: $text-secondary;
+    color: var(--color-text-secondary);
   }
 
   h5 {
@@ -517,11 +1002,87 @@ body.layout--splash .page__hero--overlay {
   transition: color $transition-normal;
 
   &:hover {
-    color: $accent-color;
+    color: var(--color-accent);
     text-decoration: underline;
   }
 
   &:visited {
     color: inherit;
   }
+}
+
+// === Theme Toggle Button ===
+.theme-toggle {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  margin-left: 0.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-masthead-link);
+  font-size: 1em;
+  line-height: 1;
+  transition: color $transition-fast, transform $transition-fast;
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  [data-theme="dark"] & i:before {
+    content: "\f185"; // fa-sun
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) & i:before {
+      content: "\f185"; // fa-sun
+    }
+  }
+}
+
+// === Hero Overlay Dark Mode ===
+// !important required because Minimal Mistakes applies overlay_color as inline style
+[data-theme="dark"] .page__hero--overlay {
+  background-color: var(--color-hero-overlay) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .page__hero--overlay {
+    background-color: var(--color-hero-overlay) !important;
+  }
+}
+
+// === Image Handling in Dark Mode ===
+[data-theme="dark"] .page__content img:not(.author__avatar img) {
+  border-radius: $radius-sm;
+  box-shadow: var(--shadow-sm);
+}
+
+// === Smooth Theme Transition ===
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body,
+.masthead,
+.page__footer,
+.archive__item,
+.greedy-nav,
+.greedy-nav .hidden-links,
+code,
+thead {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+// Disable transitions on initial page load
+html.no-transition,
+html.no-transition * {
+  transition: none !important;
 }

@@ -163,7 +163,7 @@ We're not there yet. But the direction is unmistakable.
 
 Here's how each of the nine functions migrates and accumulates across the three stages:
 <p class="image-with-caption">
-  <img alt="A matrix showing how nine PR functions — Style & Consistency, Defect Detection, Security, Architecture Validation, Design Improvement, Knowledge Transfer, Accountability, Shared Ownership, and Compliance & Audit — evolve across three stages: Optimize, Encode, and Invert. Each cell describes how the function shifts from manual PR review toward automated CI gates, encoded dev-time rules, and spec-driven verification." src="/assets/images/pr-evolution/pr-evolution-flow.svg" style="max-width: 950px;">
+  <img alt="A matrix showing how nine PR functions — Style & Consistency, Defect Detection, Security, Architecture Validation, Design Improvement, Knowledge Transfer, Accountability, Shared Ownership, and Compliance & Audit — evolve across three stages: Optimize, Encode, and Invert. Each cell describes how the function shifts from manual PR review toward automated CI gates, encoded dev-time rules, and spec-driven verification." src="/assets/images/pr-evolution/pr-evolution-flow.svg" style="max-width: 1050px;">
   <figcaption style="text-align: center;">Unbundling the PR: How nine code review functions migrate across three evolution stages</figcaption>
 </p>
 

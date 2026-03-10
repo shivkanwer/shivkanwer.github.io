@@ -8,4 +8,62 @@
 <link rel="manifest" href="/favicon/site.webmanifest">
 <meta name="theme-color" content="#ffffff">
 
+<!-- Theme toggle logic -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+
+    function updateIcon() {
+      var icon = toggle.querySelector('i');
+      if (!icon) return;
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+        (!document.documentElement.getAttribute('data-theme') &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    function updateMetaThemeColor() {
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (!meta) return;
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+        (!document.documentElement.getAttribute('data-theme') &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+      meta.setAttribute('content', isDark ? '#1a1d23' : '#ffffff');
+    }
+
+    toggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme');
+      if (current === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else if (current === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        var osPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var newTheme = osPrefersDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      }
+      updateIcon();
+      updateMetaThemeColor();
+    });
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+        if (!localStorage.getItem('theme')) {
+          updateIcon();
+          updateMetaThemeColor();
+        }
+      });
+    }
+
+    updateIcon();
+    updateMetaThemeColor();
+  });
+</script>
+
 <!-- end custom head snippets -->
