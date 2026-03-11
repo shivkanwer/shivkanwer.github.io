@@ -3,11 +3,6 @@ Allow: /
 
 # Exclude feeds from indexing
 Disallow: /feed.xml
-Disallow: /*.xml$
 
-# Allow sitemap
+# Sitemap
 Sitemap: https://thetecktalk.com/sitemap.xml
-
-# Optional: Exclude other non-content files
-Disallow: /assets/js/
-Disallow: /assets/css/

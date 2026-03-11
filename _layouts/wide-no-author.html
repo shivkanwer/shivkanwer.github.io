@@ -79,4 +79,36 @@ classes: wide-no-author
       </div>
     </div>
   {% endif %}
+
+  {% if page.date %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    },
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.excerpt | markdownify | strip_html | strip_newlines | strip | truncate: 160 | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "Person",
+      "name": {{ site.author.name | jsonify }},
+      "url": "{{ '/about/' | absolute_url }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ site.title | jsonify }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.logo | absolute_url }}"
+      }
+    }{% if page.header.teaser %},
+    "image": "{{ page.header.teaser | absolute_url }}"{% elsif site.og_image %},
+    "image": "{{ site.og_image | absolute_url }}"{% endif %}
+  }
+  </script>
+  {% endif %}
 </div>
