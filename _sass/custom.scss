@@ -1077,6 +1077,35 @@ body.layout--splash .page__hero--overlay {
   box-shadow: var(--shadow-sm);
 }
 
+// === Text Selection Highlight for Dark Mode ===
+// Minimal Mistakes _reset.scss sets ::selection to white-on-black, which is
+// invisible against the dark theme's near-black background (#1a1d23).
+[data-theme="dark"] {
+  ::-moz-selection {
+    background: #264f78;
+    color: #fff;
+  }
+
+  ::selection {
+    background: #264f78;
+    color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    ::-moz-selection {
+      background: #264f78;
+      color: #fff;
+    }
+
+    ::selection {
+      background: #264f78;
+      color: #fff;
+    }
+  }
+}
+
 // === Smooth Theme Transition ===
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
