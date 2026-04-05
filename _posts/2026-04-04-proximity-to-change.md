@@ -5,7 +5,7 @@ layout: wide-no-author
 featured: true
 excerpt: "AI is changing how software gets built, but most advice about keeping up stops at 'stay informed'. That's not enough. This article explores Proximity to Change, three distinct ways software developers can adapt to AI: knowing what's happening, doing real work with it, and knowing when AI is wrong. It covers the traps that catch even talented developers off guard, and what to actually do about it."
 header:
-  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/proximity-to-change/proximity-to-change.png"
+  teaser: "https://raw.githubusercontent.com/shivkanwer/shivkanwer.github.io/main/assets/images/proximity-to-change/proximity-to-change-wide.png"
 categories:
   - AI
 tags:
